@@ -2,11 +2,10 @@ using UnityEngine;
 
 public class GridObject : MonoBehaviour
 {
-    public GridLayer Layer => _layer;
-
+    public int MaxLayer => _maxLayer;
     public int SpawnChange => _spawnChange;
 
-    [SerializeField] private GridLayer _layer;
+    [SerializeField] private int _maxLayer;
     [SerializeField] private int _spawnChange;
 
     private void OnValidate()

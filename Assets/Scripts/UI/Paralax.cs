@@ -13,12 +13,12 @@ public class Paralax : MonoBehaviour
 
     private void OnEnable()
     {
-        _playerMover.PlayerMoved += OnMove;
+        _playerMover.PlayerMoved += OnPlayerMoved;
     }
 
     private void OnDisable()
     {
-        _playerMover.PlayerMoved -= OnMove;
+        _playerMover.PlayerMoved -= OnPlayerMoved;
     }
 
     private void Start()
@@ -26,7 +26,7 @@ public class Paralax : MonoBehaviour
         _image = GetComponent<RawImage>();
     }
 
-    private void OnMove(bool blockMove)
+    private void OnPlayerMoved(bool blockMove)
     {
         if (blockMove == false)
         {
@@ -34,10 +34,4 @@ public class Paralax : MonoBehaviour
             _image.uvRect = new Rect(_imagePositionX, 0, _image.uvRect.width, _image.uvRect.height);
         }
     }
-
-    //private void Update()
-    //{
-    //    _imagePositionX += _speed * Time.deltaTime;
-    //    _image.uvRect = new Rect(_imagePositionX, 0, _image.uvRect.width, _image.uvRect.height);
-    //}
 }

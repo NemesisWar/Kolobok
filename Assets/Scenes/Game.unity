@@ -641,8 +641,8 @@ MonoBehaviour:
   - {fileID: 5087808904334595882, guid: 5fd0aeddfbab2714f8a9b9491f5a0b51, type: 3}
   - {fileID: 8689539306737515888, guid: 5c0f69d111f8cd940baa7cf709d83c20, type: 3}
   - {fileID: 5908461979842022154, guid: d78759ad1fb928b43bda2db6d84389cd, type: 3}
-  _viewRadius: 15
-  _cellSize: 1
+  _viewRangeFront: 16
+  _viewRangeBack: 5
 --- !u!4 &314965053
 Transform:
   m_ObjectHideFlags: 0

@@ -45,6 +45,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -123,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9912650f34a8cad41adf38c601b48ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layer: 2
+  _maxLayer: 2
   _spawnChange: 20
 --- !u!114 &-6634217301944344419
 MonoBehaviour:

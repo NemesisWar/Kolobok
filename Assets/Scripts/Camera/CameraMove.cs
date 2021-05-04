@@ -6,20 +6,15 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     [SerializeField] private Transform _player;
-    private Camera _camera;
-    private Vector3 _cameraPosition;
-    private float _distanseBetweenPlayerAndCameraX;
+    private float _offsetX;
 
     private void Start()
     {
-        _camera = GetComponent <Camera>();
-        _cameraPosition = _camera.transform.position;
-        _distanseBetweenPlayerAndCameraX = _camera.transform.position.x - _player.position.x;
+        _offsetX = transform.position.x - _player.position.x;
     }
 
     private void LateUpdate()
     {
-        _cameraPosition = new Vector3(_player.position.x + _distanseBetweenPlayerAndCameraX, _cameraPosition.y, -10f);
-        _camera.transform.position = _cameraPosition;
+        transform.position = new Vector3(_player.position.x + _offsetX, transform.position.y, transform.position.z);
     }
 }
