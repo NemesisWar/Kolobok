@@ -7,6 +7,7 @@ public class Cleaner : MonoBehaviour
 {
     private int _viewRadius = 1;
     private Transform _player;
+
     public event UnityAction<Vector2Int, GameObject> ObjectNotVisible;
 
     public void Init(Transform player, int vievRadius)

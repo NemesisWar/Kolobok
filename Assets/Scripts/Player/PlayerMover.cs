@@ -6,8 +6,6 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMover : MonoBehaviour
 {
-    public event UnityAction<bool> PlayerMoved;
-    public event UnityAction<int> PositionChanged;
     [SerializeField] private float _raydistance;
     [SerializeField] private float _powerJump;
     [SerializeField] private float _speed;
@@ -16,6 +14,9 @@ public class PlayerMover : MonoBehaviour
     private bool _blockMove;
     private PlayerInput _playerInput;
     private Rigidbody2D _rigidbody2D;
+
+    public event UnityAction<bool> PlayerMoved;
+    public event UnityAction<int> PositionChanged;
 
     private void Awake()
     {
