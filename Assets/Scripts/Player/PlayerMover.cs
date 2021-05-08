@@ -6,10 +6,12 @@ using UnityEngine.Events;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMover : MonoBehaviour
 {
-    public UnityAction<bool> PlayerMoved;
+    public event UnityAction<bool> PlayerMoved;
+    public event UnityAction<int> PositionChanged;
     [SerializeField] private float _raydistance;
     [SerializeField] private float _powerJump;
     [SerializeField] private float _speed;
+    private int _previousPositionX;
     private bool _onGround;
     private bool _blockMove;
     private PlayerInput _playerInput;
@@ -24,6 +26,7 @@ public class PlayerMover : MonoBehaviour
     private void Start()
     {
         _playerInput.PlayerAction.Jump.performed += ctx => OnJump();
+        _previousPositionX = (int)_rigidbody2D.position.x;
     }
 
     private void OnDisable()
@@ -53,12 +56,17 @@ public class PlayerMover : MonoBehaviour
             PlayerMoved?.Invoke(_blockMove);
             Vector2 move = new Vector2(transform.position.x + (Vector2.right.x * _speed * Time.deltaTime), transform.position.y);
             _rigidbody2D.position = move;
+            if ((int)_rigidbody2D.position.x > _previousPositionX)
+            {
+                _previousPositionX = (int)_rigidbody2D.position.x;
+                PositionChanged?.Invoke(_previousPositionX);
+            }
         }
     }
 
     private bool CheckGround(Vector2 rayVector)
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayVector,_raydistance,LayerMask.NameToLayer("Player"));
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, rayVector, _raydistance, LayerMask.NameToLayer("Player"));
         if (hit.collider == null)
         {
             return false;

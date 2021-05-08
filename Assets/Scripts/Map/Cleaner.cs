@@ -5,21 +5,21 @@ using UnityEngine.Events;
 
 public class Cleaner : MonoBehaviour
 {
-    public event UnityAction<Vector2Int, GameObject> ExcessDistance;
-    private int _deleteRadius = 1;
+    private int _viewRadius = 1;
     private Transform _player;
+    public event UnityAction<Vector2Int, GameObject> ObjectNotVisible;
 
     public void Init(Transform player, int vievRadius)
     {
         _player = player;
-        _deleteRadius += vievRadius;
+        _viewRadius += vievRadius;
     }
 
     private void FixedUpdate()
     {
-        if (Vector2.Distance(transform.position, _player.position) > _deleteRadius)
+        if ((_player.position.x - transform.position.x) > _viewRadius)
         {
-            ExcessDistance?.Invoke(new Vector2Int((int)transform.position.x, (int)transform.position.y), gameObject);
+            ObjectNotVisible?.Invoke(new Vector2Int((int)transform.position.x, (int)transform.position.y), gameObject);
             Destroy(gameObject);
         }
     }

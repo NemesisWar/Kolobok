@@ -632,17 +632,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 314965051}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35fa7792f13fa854782ff3f52e1055a2, type: 3}
+  m_Script: {fileID: 11500000, guid: cce3dc52a1ad49f4488c4515af7fa0b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerPosition: {fileID: 163652016}
-  _objects:
+  _gridObjects:
   - {fileID: 5156955476683042289, guid: cc7e96c003c46874fb1db5d3dc1f9541, type: 3}
   - {fileID: 5087808904334595882, guid: 5fd0aeddfbab2714f8a9b9491f5a0b51, type: 3}
-  - {fileID: 8689539306737515888, guid: 5c0f69d111f8cd940baa7cf709d83c20, type: 3}
   - {fileID: 5908461979842022154, guid: d78759ad1fb928b43bda2db6d84389cd, type: 3}
-  _viewRangeFront: 16
-  _viewRangeBack: 5
+  - {fileID: 8689539306737515888, guid: 5c0f69d111f8cd940baa7cf709d83c20, type: 3}
+  _playerMover: {fileID: 163652017}
+  _viewDistance: 14
 --- !u!4 &314965053
 Transform:
   m_ObjectHideFlags: 0
