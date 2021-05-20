@@ -15,15 +15,15 @@ public class UIScore : MonoBehaviour
 
     private void OnEnable()
     {
-        _player.ChangeCoinCount += OnChangeScore;
+        _player.CoinCollected += OnCoinCollected;
     }
 
     private void OnDisable()
     {
-        _player.ChangeCoinCount -= OnChangeScore;
+        _player.CoinCollected -= OnCoinCollected;
     }
 
-    private void OnChangeScore(int score)
+    private void OnCoinCollected(int score)
     {
         _text.text = score.ToString();
     }

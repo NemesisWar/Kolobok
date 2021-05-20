@@ -7,11 +7,11 @@ public class Player : MonoBehaviour
 {
     private int _coins;
 
-    public event UnityAction<int> ChangeCoinCount;
+    public event UnityAction<int> CoinCollected;
 
     public void AddCoins()
     {
         _coins++;
-        ChangeCoinCount?.Invoke(_coins);
+        CoinCollected?.Invoke(_coins);
     }
 }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 184141773722365068}
   - component: {fileID: 8092305559957166672}
   - component: {fileID: 5156955476683042289}
-  - component: {fileID: -2353627835232152479}
   m_Layer: 0
   m_Name: Ground
   m_TagString: Untagged
@@ -45,6 +44,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -123,17 +123,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9912650f34a8cad41adf38c601b48ac2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _layer: 0
+  _maxLayer: 0
   _spawnChange: 100
---- !u!114 &-2353627835232152479
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2970743056757110786}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e002fdad36d22eb44a7c9a2a913db495, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
